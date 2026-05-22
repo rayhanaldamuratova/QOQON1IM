@@ -1,0 +1,126 @@
+﻿# Uzbek translations for Buvayda Maktabi
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uz\n"
+
+msgid "Buvayda Ixtisoslashtirilgan Maktabi"
+msgstr "Buvayda Ixtisoslashtirilgan Maktabi"
+
+msgid "PIIMA tizimida"
+msgstr "PIIMA tizimida"
+
+msgid "PIIMA tizimidagi maktab"
+msgstr "PIIMA tizimidagi maktab"
+
+msgid "Bosh sahifa"
+msgstr "Bosh sahifa"
+
+msgid "Maktab haqida"
+msgstr "Maktab haqida"
+
+msgid "Rahbariyat"
+msgstr "Rahbariyat"
+
+msgid "Rahbarlar"
+msgstr "Rahbarlar"
+
+msgid "O'qituvchilar"
+msgstr "O'qituvchilar"
+
+msgid "Yangiliklar"
+msgstr "Yangiliklar"
+
+msgid "Yutuqlar"
+msgstr "Yutuqlar"
+
+msgid "Galereya"
+msgstr "Galereya"
+
+msgid "Aloqa"
+msgstr "Aloqa"
+
+msgid "Batafsil"
+msgstr "Batafsil"
+
+msgid "Bog'lanish"
+msgstr "Bog'lanish"
+
+msgid "Batafsil o'qish"
+msgstr "Batafsil o'qish"
+
+msgid "So'nggi yangiliklar"
+msgstr "So'nggi yangiliklar"
+
+msgid "Barcha yangiliklar"
+msgstr "Barcha yangiliklar"
+
+msgid "O'quvchi yutuqlari"
+msgstr "O'quvchi yutuqlari"
+
+msgid "Barcha yutuqlar"
+msgstr "Barcha yutuqlar"
+
+msgid "O'quvchilar"
+msgstr "O'quvchilar"
+
+msgid "Qo'qon shahri 1-sonli"
+msgstr "Qo'qon shahri 1-sonli"
+
+msgid "Ixtisoslashtirilgan Maktabi"
+msgstr "Ixtisoslashtirilgan Maktabi"
+
+msgid "O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi (PIIMA) tizimida faoliyat yuritadi."
+msgstr "O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi (PIIMA) tizimida faoliyat yuritadi."
+
+msgid "Qo'qon shahri, Farg'ona viloyati"
+msgstr "Qo'qon shahri, Farg'ona viloyati"
+
+msgid "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi"
+msgstr "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi"
+
+msgid "PIIMA — Rasmiy veb-sayt"
+msgstr "PIIMA — Rasmiy veb-sayt"
+
+msgid "Все"
+msgstr "Barchasi"
+
+msgid "Olimpiada"
+msgstr "Olimpiada"
+
+msgid "Sport"
+msgstr "Sport"
+
+msgid "Fan"
+msgstr "Fan"
+
+msgid "San'at"
+msgstr "San'at"
+
+msgid "Boshqa"
+msgstr "Boshqa"
+
+msgid "Maktab"
+msgstr "Maktab"
+
+msgid "Tuman"
+msgstr "Tuman"
+
+msgid "Viloyat"
+msgstr "Viloyat"
+
+msgid "Respublika"
+msgstr "Respublika"
+
+msgid "Xalqaro"
+msgstr "Xalqaro"
+
+msgid "Sahifalar"
+msgstr "Sahifalar"
+
+msgid "Ma'lumotlar"
+msgstr "Ma'lumotlar"
+
+
+

@@ -1,0 +1,86 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Yutuqlar" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{% trans "Yutuqlar" %}</span>
+    </div>
+    <h1>{% trans "O'quvchi yutuqlari" %}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Filters -->
+    <div style="display:flex; gap:24px; flex-wrap:wrap; margin-bottom:32px;">
+      <div>
+        <p style="font-size:0.82rem; color:var(--gray-500); font-weight:600; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">{% trans "Kategoriya" %}</p>
+        <div class="filter-bar" style="margin-bottom:0;">
+          <a href="?{% if selected_level %}level={{ selected_level }}{% endif %}" class="filter-btn {% if not selected_category %}active{% endif %}">{% trans "Hammasi" %}</a>
+          {% for code, name in categories %}
+            <a href="?category={{ code }}{% if selected_level %}&level={{ selected_level }}{% endif %}"
+               class="filter-btn {% if selected_category == code %}active{% endif %}">{{ name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div>
+        <p style="font-size:0.82rem; color:var(--gray-500); font-weight:600; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.5px;">{% trans "Daraja" %}</p>
+        <div class="filter-bar" style="margin-bottom:0;">
+          <a href="?{% if selected_category %}category={{ selected_category }}{% endif %}" class="filter-btn {% if not selected_level %}active{% endif %}">{% trans "Hammasi" %}</a>
+          {% for code, name in levels %}
+            <a href="?level={{ code }}{% if selected_category %}&category={{ selected_category }}{% endif %}"
+               class="filter-btn {% if selected_level == code %}active{% endif %}">{{ name }}</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    {% if achievements %}
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      {% for achievement in achievements %}
+      <div class="achievement-card">
+        <div class="achievement-medal {% if achievement.place == 1 %}medal-gold{% elif achievement.place == 2 %}medal-silver{% elif achievement.place == 3 %}medal-bronze{% else %}medal-other{% endif %}">
+          {% if achievement.place %}{{ achievement.place }}{% else %}<i class="fa-solid fa-trophy"></i>{% endif %}
+        </div>
+        <div class="achievement-info" style="flex:1;">
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px;">
+            <span class="achievement-level">{{ achievement.get_level_display }}</span>
+            <span style="font-size:0.75rem; font-weight:600; padding:2px 10px; border-radius:4px; background:var(--gray-100); color:var(--gray-500);">{{ achievement.get_category_display }}</span>
+          </div>
+          <div class="achievement-title">{{ achievement.title }}</div>
+          <div class="achievement-student"><i class="fa-solid fa-user"></i> {{ achievement.student_name }}</div>
+          <div class="achievement-meta">
+            <i class="fa-regular fa-calendar"></i> {{ achievement.date|date:"d.m.Y" }}
+            {% if achievement.teacher_name %} &nbsp;·&nbsp; <i class="fa-solid fa-chalkboard-user"></i> {{ achievement.teacher_name }}{% endif %}
+          </div>
+          {% if achievement.description %}
+            <p style="font-size:0.85rem; color:var(--gray-500); margin-top:6px; line-height:1.5;">{{ achievement.description|truncatewords:20 }}</p>
+          {% endif %}
+        </div>
+        {% if achievement.photo %}
+          <img src="{{ achievement.photo.url }}" alt="{{ achievement.title }}"
+               style="width:100px; height:100px; object-fit:cover; border-radius:var(--radius); flex-shrink:0;">
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center; padding:60px 0; color:var(--gray-500);">
+      <div style="font-size:3rem; margin-bottom:16px;"><i class="fa-solid fa-trophy" style="color:var(--gray-300);"></i></div>
+      <p>{% trans "Hozircha yutuqlar kiritilmagan." %}</p>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %}
+
+
+

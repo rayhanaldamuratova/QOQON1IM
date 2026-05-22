@@ -1,0 +1,55 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Galereya" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{% trans "Galereya" %}</span>
+    </div>
+    <h1>{% trans "Fotogalereya" %}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% if albums %}
+    <div class="grid-3">
+      {% for album in albums %}
+      <a href="{% url 'gallery:album' album.pk %}" class="card" style="display:block; text-decoration:none;">
+        {% if album.cover_image %}
+          <img src="{{ album.cover_image.url }}" alt="{{ album.title }}" class="card-img">
+        {% else %}
+          <div style="height:200px; background:linear-gradient(135deg,var(--primary),var(--primary-light)); display:flex; align-items:center; justify-content:center;">
+            <i class="fa-solid fa-images" style="font-size:3.5rem; color:rgba(255,255,255,0.3);"></i>
+          </div>
+        {% endif %}
+        <div class="card-body">
+          <h3 class="card-title">{{ album.title }}</h3>
+          {% if album.description %}
+            <p class="card-text">{{ album.description|truncatewords:15 }}</p>
+          {% endif %}
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px;">
+            <span style="font-size:0.82rem; color:var(--gray-500);"><i class="fa-solid fa-camera"></i> {{ album.photo_count }} {% trans "rasm" %}</span>
+            <span style="font-size:0.82rem; color:var(--gray-500);">{{ album.created_at|date:"d.m.Y" }}</span>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center; padding:60px 0; color:var(--gray-500);">
+      <div style="font-size:3rem; margin-bottom:16px;"><i class="fa-solid fa-images" style="color:var(--gray-300);"></i></div>
+      <p>{% trans "Hozircha rasmlar yo'q." %}</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+
+

@@ -1,0 +1,69 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Rahbarlar" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{% trans "Rahbarlar" %}</span>
+    </div>
+    <h1>{% trans "Maktab rahbariyati" %}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">{% trans "Rahbarlar" %}</h2>
+    <div class="section-divider"></div>
+
+    {% if leaders %}
+    <div class="grid-3">
+      {% for member in leaders %}
+      <div class="staff-card">
+        {% if member.photo %}
+          <img src="{{ member.photo.url }}" alt="{{ member.full_name }}" class="staff-card-photo">
+        {% else %}
+          <div class="staff-card-photo-placeholder">{{ member.full_name|first }}</div>
+        {% endif %}
+        <div class="staff-card-name">{{ member.full_name }}</div>
+        <div class="staff-card-position">{{ member.position }}</div>
+        {% if member.experience_years %}
+          <div style="font-size:0.82rem; color:var(--gray-500); margin-bottom:8px;">
+            {% trans "Tajriba" %}: {{ member.experience_years }} {% trans "yil" %}
+          </div>
+        {% endif %}
+        {% if member.education %}
+          <div style="font-size:0.82rem; color:var(--gray-500); margin-top:6px;"><i class="fa-solid fa-graduation-cap"></i> {{ member.education }}</div>
+        {% endif %}
+        {% if member.phone or member.email %}
+        <div style="margin-top:14px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+          {% if member.phone %}
+            <a href="tel:{{ member.phone }}" class="btn btn-outline" style="padding:6px 14px; font-size:0.82rem;">📞 {{ member.phone }}</a>
+          {% endif %}
+          {% if member.email %}
+            <a href="mailto:{{ member.email }}" class="btn btn-outline" style="padding:6px 14px; font-size:0.82rem;">✉ Email</a>
+          {% endif %}
+        </div>
+        {% endif %}
+        {% if member.bio %}
+          <p style="font-size:0.85rem; color:var(--gray-500); margin-top:12px; line-height:1.6;">{{ member.bio|truncatewords:20 }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center; padding:60px 0; color:var(--gray-500);">
+      <div style="font-size:3rem; margin-bottom:16px;"><i class="fa-solid fa-user-tie" style="color:var(--gray-300);"></i></div>
+      <p>{% trans "Rahbarlar haqida ma'lumot kiritilmagan." %}</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+
+

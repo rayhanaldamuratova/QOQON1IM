@@ -1,0 +1,76 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Maktab haqida" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{% trans "Maktab haqida" %}</span>
+    </div>
+    <h1>{% trans "Maktab haqida" %}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:2fr 1fr; gap:48px; align-items:start;">
+      <div>
+        <h2 class="section-title">
+          {% if school %}{{ school.name }}{% else %}{% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endif %}
+        </h2>
+        <div class="section-divider"></div>
+        <div style="font-size:1rem; color:var(--gray-700); line-height:1.85;">
+          {% if school and school.description %}
+            {{ school.description|linebreaks }}
+          {% else %}
+            <p>{% trans "Qo'qon shahri 1-sonli ixtisoslashtirilgan maktabi O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi (PIIMA) tizimida faoliyat yuritadi." %}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div>
+        {% if school %}
+        <div style="background:var(--off-white); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--gray-100);">
+          <h3 style="font-family:var(--font-display); color:var(--primary); margin-bottom:20px; font-size:1.1rem;">{% trans "Asosiy ko'rsatkichlar" %}</h3>
+          {% if school.founded_year %}
+          <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-100);">
+            <span style="color:var(--gray-500); font-size:0.88rem;">{% trans "Tashkil etilgan yil" %}</span>
+            <strong style="color:var(--primary);">{{ school.founded_year }}</strong>
+          </div>
+          {% endif %}
+          {% if school.student_count %}
+          <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-100);">
+            <span style="color:var(--gray-500); font-size:0.88rem;">{% trans "O'quvchilar soni" %}</span>
+            <strong style="color:var(--primary);">{{ school.student_count }}</strong>
+          </div>
+          {% endif %}
+          {% if school.teacher_count %}
+          <div style="display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid var(--gray-100);">
+            <span style="color:var(--gray-500); font-size:0.88rem;">{% trans "O'qituvchilar soni" %}</span>
+            <strong style="color:var(--primary);">{{ school.teacher_count }}</strong>
+          </div>
+          {% endif %}
+          {% if school.address %}
+          <div style="padding:12px 0;">
+            <span style="color:var(--gray-500); font-size:0.88rem; display:block; margin-bottom:4px;">{% trans "Manzil" %}</span>
+            <strong style="color:var(--primary); font-size:0.9rem;">{{ school.address }}</strong>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+
+        <div style="margin-top:20px;">
+          <a href="{% url 'contact:contact' %}" class="btn btn-primary" style="width:100%; justify-content:center;">{% trans "Bog'lanish" %}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+

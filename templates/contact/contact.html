@@ -1,0 +1,131 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Aloqa" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{% trans "Aloqa" %}</span>
+    </div>
+    <h1>{% trans "Biz bilan bog'laning" %}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Contact Info -->
+      <div class="contact-info-box">
+        <div class="contact-info-title">{% trans "Aloqa ma'lumotlari" %}</div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="contact-info-text">
+            <label>{% trans "Manzil" %}</label>
+            <p>{% if school and school.address %}{{ school.address }}{% else %}O'zbekiston Respublikasi, Farg'ona viloyati, Buvayda tumani, Qoratepa MFY, Adalat ko'chasi 200-uy{% endif %}</p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="contact-info-text">
+            <label>{% trans "Telefon" %}</label>
+            <p><a href="tel:+998916850075">+998 (91) 685 00 75 </a></p>
+            <p><a href="tel:+998912001575">+998 (91) 200 15 75 </a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="contact-info-text">
+            <label>{% trans "Email" %}</label>
+            <p>
+              <a href="mailto:qoqon1imi@umail.uz">qoqon1imi@umail.uz</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-brands fa-telegram"></i></div>
+          <div class="contact-info-text">
+            <label>{% trans "Telegram kanali" %}</label>
+            <p><a href="https://t.me/QOQON1IM" target="_blank">@QOQON1IM</a></p>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa-regular fa-clock"></i></div>
+          <div class="contact-info-text">
+            <label>{% trans "Ish vaqti" %}</label>
+            <p>{% trans "Dushanba – Shanba: 8:00 – 18:00" %}</p>
+          </div>
+        </div>
+
+        <div style="margin-top:24px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1);">
+          <p style="font-size:0.85rem; color:rgba(255,255,255,0.5); line-height:1.7;">
+            {% trans "Savollaringiz bo'lsa yoki murojaat qilmoqchi bo'lsangiz, forma orqali xabar yuboring. Tez orada javob beramiz." %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h3 style="font-family:var(--font-display); color:var(--primary); font-size:1.4rem; margin-bottom:6px;">{% trans "Murojaat yuborish" %}</h3>
+        <p style="color:var(--gray-500); font-size:0.9rem; margin-bottom:24px;">{% trans "Xabaringizni qoldiring, tez orada bog'lanamiz." %}</p>
+
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group">
+              <label for="full_name"><i class="fa-solid fa-user" style="color:var(--gray-500); margin-right:5px;"></i>{% trans "Ism va familiya" %} *</label>
+              <input type="text" id="full_name" name="full_name" class="form-control" required placeholder="{% trans 'Ismingizni kiriting' %}">
+            </div>
+            <div class="form-group">
+              <label for="phone"><i class="fa-solid fa-phone" style="color:var(--gray-500); margin-right:5px;"></i>{% trans "Telefon raqami" %}</label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="+998 XX XXX-XX-XX">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email"><i class="fa-solid fa-envelope" style="color:var(--gray-500); margin-right:5px;"></i>{% trans "Email" %}</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="subject"><i class="fa-solid fa-tag" style="color:var(--gray-500); margin-right:5px;"></i>{% trans "Mavzu" %} *</label>
+            <input type="text" id="subject" name="subject" class="form-control" required placeholder="{% trans 'Murojaat mavzusi' %}">
+          </div>
+          <div class="form-group">
+            <label for="message"><i class="fa-solid fa-message" style="color:var(--gray-500); margin-right:5px;"></i>{% trans "Xabar" %} *</label>
+            <textarea id="message" name="message" class="form-control" rows="5" required placeholder="{% trans 'Xabaringizni yozing...' %}"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:14px; font-size:1rem;">
+            <i class="fa-solid fa-paper-plane"></i> {% trans "Yuborish" %}
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Map -->
+    {% if school and school.map_embed_url %}
+    <div class="map-container">
+      <iframe src="{{ school.map_embed_url }}" allowfullscreen loading="lazy" title="{% trans 'Maktab joylashuvi' %}"></iframe>
+    </div>
+    {% else %}
+    <div class="map-container" style="background:var(--off-white); height:380px; display:flex; align-items:center; justify-content:center; border-radius:var(--radius-lg); margin-top:40px; border:1px solid var(--gray-100);">
+      <div style="text-align:center; color:var(--gray-500);">
+        <i class="fa-solid fa-map-location-dot" style="font-size:3rem; color:var(--gray-300); margin-bottom:12px; display:block;"></i>
+        <p style="font-size:0.9rem;">{% trans "Xarita admin paneldan kiritilganda bu yerda ko'rinadi" %}</p>
+        <p style="font-size:0.8rem; margin-top:6px; color:var(--gray-300);">Farg'ona viloyati, Buvayda tumani, Adalat ko'chasi 200</p>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+
+

@@ -1,0 +1,305 @@
+﻿# English translations for Buvayda Maktabi
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "Buvayda Ixtisoslashtirilgan Maktabi"
+msgstr "Buvayda Specialized School"
+
+msgid "PIIMA tizimida"
+msgstr "PIIMA System"
+
+msgid "PIIMA tizimidagi maktab"
+msgstr "School under PIIMA"
+
+msgid "Bosh sahifa"
+msgstr "Home"
+
+msgid "Maktab haqida"
+msgstr "About School"
+
+msgid "Rahbariyat"
+msgstr "Leadership"
+
+msgid "Rahbarlar"
+msgstr "Management"
+
+msgid "O'qituvchilar"
+msgstr "Teachers"
+
+msgid "Yangiliklar"
+msgstr "News"
+
+msgid "Yutuqlar"
+msgstr "Achievements"
+
+msgid "Galereya"
+msgstr "Gallery"
+
+msgid "Aloqa"
+msgstr "Contact"
+
+msgid "Telefon"
+msgstr "Phone"
+
+msgid "Batafsil"
+msgstr "Details"
+
+msgid "Bog'lanish"
+msgstr "Contact Us"
+
+msgid "Batafsil o'qish"
+msgstr "Read More"
+
+msgid "So'nggi yangiliklar"
+msgstr "Latest News"
+
+msgid "Barcha yangiliklar"
+msgstr "All News"
+
+msgid "O'quvchi yutuqlari"
+msgstr "Student Achievements"
+
+msgid "Barcha yutuqlar"
+msgstr "All Achievements"
+
+msgid "Batafsil o'qish"
+msgstr "Read More"
+
+msgid "Sifatli ta'lim"
+msgstr "Quality Education"
+
+msgid "Olimpiada g'oliblari"
+msgstr "Olympiad Winners"
+
+msgid "Zamonaviy laboratoriya"
+msgstr "Modern Laboratory"
+
+msgid "Xalqaro hamkorlik"
+msgstr "International Cooperation"
+
+msgid "O'quvchilar"
+msgstr "Students"
+
+msgid "O'qituvchilar"
+msgstr "Teachers"
+
+msgid "Maktab rahbariyati"
+msgstr "School Leadership"
+
+msgid "O'qituvchilar jamoasi"
+msgstr "Teaching Staff"
+
+msgid "Hammasi"
+msgstr "All"
+
+msgid "Tajriba"
+msgstr "Experience"
+
+msgid "yil"
+msgstr "years"
+
+msgid "Ta'lim"
+msgstr "Education"
+
+msgid "Tarjimai hol"
+msgstr "Biography"
+
+msgid "Rahbarlarga qaytish"
+msgstr "Back to Leadership"
+
+msgid "O'qituvchilarga qaytish"
+msgstr "Back to Teachers"
+
+msgid "Fotogalereya"
+msgstr "Photo Gallery"
+
+msgid "rasm"
+msgstr "photos"
+
+msgid "Bu albumda rasmlar yo'q."
+msgstr "No photos in this album."
+
+msgid "Galereyaga qaytish"
+msgstr "Back to Gallery"
+
+msgid "Yangiliklar va e'lonlar"
+msgstr "News & Announcements"
+
+msgid "Hozircha yangiliklar yo'q."
+msgstr "No news yet."
+
+msgid "Kategoriya"
+msgstr "Category"
+
+msgid "Daraja"
+msgstr "Level"
+
+msgid "Hozircha yutuqlar kiritilmagan."
+msgstr "No achievements added yet."
+
+msgid "Biz bilan bog'laning"
+msgstr "Get in Touch"
+
+msgid "Aloqa ma'lumotlari"
+msgstr "Contact Information"
+
+msgid "Manzil"
+msgstr "Address"
+
+msgid "Email"
+msgstr "Email"
+
+msgid "Telegram kanali"
+msgstr "Telegram Channel"
+
+msgid "Ish vaqti"
+msgstr "Working Hours"
+
+msgid "Dushanba – Shanba: 8:00 – 18:00"
+msgstr "Monday – Saturday: 8:00 AM – 6:00 PM"
+
+msgid "Murojaat yuborish"
+msgstr "Send a Message"
+
+msgid "Xabaringizni qoldiring, tez orada bog'lanamiz."
+msgstr "Leave a message and we will get back to you shortly."
+
+msgid "Ism va familiya"
+msgstr "Full Name"
+
+msgid "Ismingizni kiriting"
+msgstr "Enter your name"
+
+msgid "Telefon raqami"
+msgstr "Phone Number"
+
+msgid "Mavzu"
+msgstr "Subject"
+
+msgid "Murojaat mavzusi"
+msgstr "Message subject"
+
+msgid "Xabar"
+msgstr "Message"
+
+msgid "Xabaringizni yozing..."
+msgstr "Write your message..."
+
+msgid "Yuborish"
+msgstr "Send"
+
+msgid "Xarita admin paneldan kiritilganda bu yerda ko'rinadi"
+msgstr "Map will appear here after being added in the admin panel"
+
+msgid "Maktab joylashuvi"
+msgstr "School Location"
+
+msgid "Murojaatingiz qabul qilindi. Tez orada javob beramiz!"
+msgstr "Your message has been received. We will reply shortly!"
+
+msgid "Asosiy ko'rsatkichlar"
+msgstr "Key Statistics"
+
+msgid "Tashkil etilgan yil"
+msgstr "Founded"
+
+msgid "O'quvchilar soni"
+msgstr "Number of Students"
+
+msgid "O'qituvchilar soni"
+msgstr "Number of Teachers"
+
+msgid "Rahbarlar haqida ma'lumot kiritilmagan."
+msgstr "No leadership information added yet."
+
+msgid "O'qituvchilar haqida ma'lumot kiritilmagan."
+msgstr "No teacher information added yet."
+
+msgid "Hozircha rasmlar yo'q."
+msgstr "No photos yet."
+
+msgid "O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi tizimidagi Buvayda tumani ixtisoslashtirilgan maktabi"
+msgstr "Buvayda District Specialized School under the Agency of Specialized Educational Institutions of the Republic of Uzbekistan"
+
+msgid "PIIMA — Ixtisoslashtirilgan ta'lim muassasalari agentligi"
+msgstr "PIIMA — Agency of Specialized Educational Institutions"
+
+msgid "Sahifalar"
+msgstr "Pages"
+
+msgid "Ma'lumotlar"
+msgstr "Information"
+
+msgid "Rasmiy veb-sayt"
+msgstr "Official Website"
+
+msgid "Barcha huquqlar himoyalangan."
+msgstr "All rights reserved."
+
+msgid "Buvayda Ixtisoslashtirilgan Maktabi. Barcha huquqlar himoyalangan."
+msgstr "Buvayda Specialized School. All rights reserved."
+
+msgid "Boshqa yangiliklar"
+msgstr "Other News"
+
+msgid "Yangiliklarga qaytish"
+msgstr "Back to News"
+
+msgid "Qo'qon shahri 1-sonli"
+msgstr "Kokand City Specialized School No. 1"
+
+msgid "Ixtisoslashtirilgan Maktabi"
+msgstr "Specialized School"
+
+msgid "O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi (PIIMA) tizimida faoliyat yuritadi."
+msgstr "Operating under the Agency of Specialized Educational Institutions of the Republic of Uzbekistan (PIIMA)."
+
+msgid "Qo'qon shahri, Farg'ona viloyati"
+msgstr "Kokand City, Fergana Region"
+
+msgid "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi"
+msgstr "Kokand City Specialized School No. 1"
+
+msgid "PIIMA — Rasmiy veb-sayt"
+msgstr "PIIMA — Official Website"
+
+msgid "Все"
+msgstr "All"
+
+msgid "Olimpiada"
+msgstr "Olympiad"
+
+msgid "Sport"
+msgstr "Sport"
+
+msgid "Fan"
+msgstr "Science"
+
+msgid "San'at"
+msgstr "Art"
+
+msgid "Boshqa"
+msgstr "Other"
+
+msgid "Maktab"
+msgstr "School"
+
+msgid "Tuman"
+msgstr "District"
+
+msgid "Viloyat"
+msgstr "Region"
+
+msgid "Respublika"
+msgstr "Republic"
+
+msgid "Xalqaro"
+msgstr "International"
+
+msgid "PIIMA tizimidagi maktab"
+msgstr "School under PIIMA"
+
+

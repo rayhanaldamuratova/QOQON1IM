@@ -1,0 +1,53 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ album.title }} | {% trans "Galereya" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="{% url 'gallery:list' %}">{% trans "Galereya" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{{ album.title }}</span>
+    </div>
+    <h1>{{ album.title }}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% if album.description %}
+      <p style="color:var(--gray-500); margin-bottom:32px; max-width:700px;">{{ album.description }}</p>
+    {% endif %}
+
+    {% if photos %}
+    <div class="gallery-grid">
+      {% for photo in photos %}
+      <div class="gallery-item">
+        <img src="{{ photo.image.url }}" alt="{{ photo.caption|default:album.title }}" loading="lazy">
+        {% if photo.caption %}
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-text">{{ photo.caption }}</span>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center; padding:60px 0; color:var(--gray-500);">
+      <p>{% trans "Bu albumda rasmlar yo'q." %}</p>
+    </div>
+    {% endif %}
+
+    <div style="margin-top:40px;">
+      <a href="{% url 'gallery:list' %}" class="btn btn-outline">← {% trans "Galereyaga qaytish" %}</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+

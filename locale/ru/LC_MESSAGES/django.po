@@ -1,0 +1,301 @@
+﻿# Russian translations for Buvayda Maktabi
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru\n"
+
+msgid "Buvayda Ixtisoslashtirilgan Maktabi"
+msgstr "Специализированная школа Бувайды"
+
+msgid "PIIMA tizimida"
+msgstr "В системе PIIMA"
+
+msgid "PIIMA tizimidagi maktab"
+msgstr "Школа в системе PIIMA"
+
+msgid "Bosh sahifa"
+msgstr "Главная"
+
+msgid "Maktab haqida"
+msgstr "О школе"
+
+msgid "Rahbariyat"
+msgstr "Руководство"
+
+msgid "Rahbarlar"
+msgstr "Руководители"
+
+msgid "O'qituvchilar"
+msgstr "Учителя"
+
+msgid "Yangiliklar"
+msgstr "Новости"
+
+msgid "Yutuqlar"
+msgstr "Достижения"
+
+msgid "Galereya"
+msgstr "Галерея"
+
+msgid "Aloqa"
+msgstr "Контакты"
+
+msgid "Telefon"
+msgstr "Телефон"
+
+msgid "Batafsil"
+msgstr "Подробнее"
+
+msgid "Bog'lanish"
+msgstr "Связаться"
+
+msgid "Batafsil o'qish"
+msgstr "Читать далее"
+
+msgid "So'nggi yangiliklar"
+msgstr "Последние новости"
+
+msgid "Barcha yangiliklar"
+msgstr "Все новости"
+
+msgid "O'quvchi yutuqlari"
+msgstr "Достижения учеников"
+
+msgid "Barcha yutuqlar"
+msgstr "Все достижения"
+
+msgid "Maktab haqida"
+msgstr "О школе"
+
+msgid "Batafsil o'qish"
+msgstr "Читать далее"
+
+msgid "Sifatli ta'lim"
+msgstr "Качественное образование"
+
+msgid "Olimpiada g'oliblari"
+msgstr "Победители олимпиад"
+
+msgid "Zamonaviy laboratoriya"
+msgstr "Современная лаборатория"
+
+msgid "Xalqaro hamkorlik"
+msgstr "Международное сотрудничество"
+
+msgid "O'quvchilar"
+msgstr "Учеников"
+
+msgid "O'qituvchilar"
+msgstr "Учителей"
+
+msgid "Maktab rahbariyati"
+msgstr "Руководство школы"
+
+msgid "O'qituvchilar jamoasi"
+msgstr "Коллектив учителей"
+
+msgid "Hammasi"
+msgstr "Все"
+
+msgid "Tajriba"
+msgstr "Опыт"
+
+msgid "yil"
+msgstr "лет"
+
+msgid "Ta'lim"
+msgstr "Образование"
+
+msgid "Tarjimai hol"
+msgstr "Биография"
+
+msgid "Rahbarlarga qaytish"
+msgstr "Вернуться к руководству"
+
+msgid "O'qituvchilarga qaytish"
+msgstr "Вернуться к учителям"
+
+msgid "Fotogalereya"
+msgstr "Фотогалерея"
+
+msgid "rasm"
+msgstr "фото"
+
+msgid "Bu albumda rasmlar yo'q."
+msgstr "В этом альбоме нет фотографий."
+
+msgid "Galereyaga qaytish"
+msgstr "Вернуться в галерею"
+
+msgid "Yangiliklar va e'lonlar"
+msgstr "Новости и объявления"
+
+msgid "Hozircha yangiliklar yo'q."
+msgstr "Новостей пока нет."
+
+msgid "Kategoriya"
+msgstr "Категория"
+
+msgid "Daraja"
+msgstr "Уровень"
+
+msgid "Hozircha yutuqlar kiritilmagan."
+msgstr "Достижения ещё не добавлены."
+
+msgid "Biz bilan bog'laning"
+msgstr "Свяжитесь с нами"
+
+msgid "Aloqa ma'lumotlari"
+msgstr "Контактная информация"
+
+msgid "Manzil"
+msgstr "Адрес"
+
+msgid "Email"
+msgstr "Электронная почта"
+
+msgid "Telegram kanali"
+msgstr "Telegram канал"
+
+msgid "Ish vaqti"
+msgstr "Режим работы"
+
+msgid "Dushanba – Shanba: 8:00 – 18:00"
+msgstr "Понедельник – Суббота: 8:00 – 18:00"
+
+msgid "Murojaat yuborish"
+msgstr "Отправить сообщение"
+
+msgid "Xabaringizni qoldiring, tez orada bog'lanamiz."
+msgstr "Оставьте сообщение, мы свяжемся с вами."
+
+msgid "Ism va familiya"
+msgstr "Имя и фамилия"
+
+msgid "Ismingizni kiriting"
+msgstr "Введите ваше имя"
+
+msgid "Telefon raqami"
+msgstr "Номер телефона"
+
+msgid "Mavzu"
+msgstr "Тема"
+
+msgid "Murojaat mavzusi"
+msgstr "Тема обращения"
+
+msgid "Xabar"
+msgstr "Сообщение"
+
+msgid "Xabaringizni yozing..."
+msgstr "Напишите ваше сообщение..."
+
+msgid "Yuborish"
+msgstr "Отправить"
+
+msgid "Xarita admin paneldan kiritilganda bu yerda ko'rinadi"
+msgstr "Карта появится здесь после добавления в панели администратора"
+
+msgid "Maktab joylashuvi"
+msgstr "Расположение школы"
+
+msgid "Murojaatingiz qabul qilindi. Tez orada javob beramiz!"
+msgstr "Ваше обращение принято. Мы ответим вам в ближайшее время!"
+
+msgid "Asosiy ko'rsatkichlar"
+msgstr "Основные показатели"
+
+msgid "Tashkil etilgan yil"
+msgstr "Год основания"
+
+msgid "O'quvchilar soni"
+msgstr "Количество учеников"
+
+msgid "O'qituvchilar soni"
+msgstr "Количество учителей"
+
+msgid "Rahbarlar haqida ma'lumot kiritilmagan."
+msgstr "Информация о руководителях не добавлена."
+
+msgid "O'qituvchilar haqida ma'lumot kiritilmagan."
+msgstr "Информация об учителях не добавлена."
+
+msgid "Hozircha rasmlar yo'q."
+msgstr "Фотографий пока нет."
+
+msgid "O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi tizimidagi Buvayda tumani ixtisoslashtirilgan maktabi"
+msgstr "Специализированная школа Бувайдинского района в системе Агентства специализированных образовательных учреждений Республики Узбекистан"
+
+msgid "PIIMA — Ixtisoslashtirilgan ta'lim muassasalari agentligi"
+msgstr "PIIMA — Агентство специализированных учебных заведений"
+
+msgid "Sahifalar"
+msgstr "Страницы"
+
+msgid "Ma'lumotlar"
+msgstr "Информация"
+
+msgid "Rasmiy veb-sayt"
+msgstr "Официальный сайт"
+
+msgid "Barcha huquqlar himoyalangan."
+msgstr "Все права защищены."
+
+msgid "Buvayda Ixtisoslashtirilgan Maktabi. Barcha huquqlar himoyalangan."
+msgstr "Специализированная школа Бувайды. Все права защищены."
+
+msgid "Qo'qon shahri 1-sonli"
+msgstr "Кокандская городская специализированная школа №1"
+
+msgid "Ixtisoslashtirilgan Maktabi"
+msgstr "Специализированная школа"
+
+msgid "O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi (PIIMA) tizimida faoliyat yuritadi."
+msgstr "Деятельность в системе Агентства специализированных учебных заведений Республики Узбекистан (PIIMA)."
+
+msgid "Qo'qon shahri, Farg'ona viloyati"
+msgstr "Город Коканд, Ферганская область"
+
+msgid "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi"
+msgstr "Кокандская городская специализированная школа №1"
+
+msgid "PIIMA — Rasmiy veb-sayt"
+msgstr "PIIMA — Официальный сайт"
+
+msgid "Все"
+msgstr "Все"
+
+msgid "Olimpiada"
+msgstr "Олимпиада"
+
+msgid "Sport"
+msgstr "Спорт"
+
+msgid "Fan"
+msgstr "Наука"
+
+msgid "San'at"
+msgstr "Искусство"
+
+msgid "Boshqa"
+msgstr "Другое"
+
+msgid "Maktab"
+msgstr "Школа"
+
+msgid "Tuman"
+msgstr "Район"
+
+msgid "Viloyat"
+msgstr "Область"
+
+msgid "Respublika"
+msgstr "Республика"
+
+msgid "Xalqaro"
+msgstr "Международный"
+
+msgid "PIIMA tizimidagi maktab"
+msgstr "Школа в системе PIIMA"
+

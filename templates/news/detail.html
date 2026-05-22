@@ -1,0 +1,58 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{{ article.title }} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="{% url 'news:list' %}">{% trans "Yangiliklar" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{{ article.title|truncatewords:6 }}</span>
+    </div>
+    <h1>{{ article.title }}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:2fr 1fr; gap:48px; align-items:start;">
+      <article>
+        {% if article.image %}
+          <img src="{{ article.image.url }}" alt="{{ article.title }}" style="width:100%; border-radius:var(--radius-lg); margin-bottom:28px; max-height:420px; object-fit:cover;">
+        {% endif %}
+        <div style="display:flex; gap:12px; margin-bottom:20px; flex-wrap:wrap;">
+          {% if article.category %}<span class="news-badge">{{ article.category.name }}</span>{% endif %}
+          <span style="font-size:0.88rem; color:var(--gray-500);"><i class="fa-regular fa-calendar"></i> {{ article.created_at|date:"d F Y" }}</span>
+        </div>
+        <div style="font-size:1.02rem; line-height:1.85; color:var(--gray-700);">
+          {{ article.content|linebreaks }}
+        </div>
+        <div style="margin-top:32px; padding-top:24px; border-top:1px solid var(--gray-100);">
+          <a href="{% url 'news:list' %}" class="btn btn-outline">← {% trans "Yangiliklarga qaytish" %}</a>
+        </div>
+      </article>
+
+      <aside>
+        {% if related %}
+        <div style="background:var(--off-white); border-radius:var(--radius-lg); padding:24px;">
+          <h3 style="font-family:var(--font-display); color:var(--primary); margin-bottom:20px;">{% trans "Boshqa yangiliklar" %}</h3>
+          {% for r in related %}
+          <div style="padding:12px 0; border-bottom:1px solid var(--gray-100);">
+            <div style="font-size:0.78rem; color:var(--gray-500); margin-bottom:4px;">{{ r.created_at|date:"d.m.Y" }}</div>
+            <a href="{% url 'news:detail' r.pk %}" style="font-size:0.92rem; color:var(--primary); font-weight:500; line-height:1.4; display:block;">{{ r.title|truncatewords:10 }}</a>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+

@@ -1,0 +1,61 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Yangiliklar" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{% trans "Yangiliklar" %}</span>
+    </div>
+    <h1>{% trans "Yangiliklar va e'lonlar" %}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    {% if categories %}
+    <div class="filter-bar">
+      <a href="{% url 'news:list' %}" class="filter-btn {% if not selected_category %}active{% endif %}">{% trans "Hammasi" %}</a>
+      {% for cat in categories %}
+        <a href="?category={{ cat.pk }}" class="filter-btn {% if selected_category == cat.pk|stringformat:'s' %}active{% endif %}">{{ cat.name }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if news %}
+    <div class="grid-3">
+      {% for article in news %}
+      <article class="card">
+        {% if article.image %}
+          <img src="{{ article.image.url }}" alt="{{ article.title }}" class="card-img">
+        {% else %}
+          <div style="height:200px; background:linear-gradient(135deg,var(--primary),var(--primary-light)); display:flex; align-items:center; justify-content:center;">
+            <i class="fa-solid fa-newspaper" style="font-size:3.5rem; color:rgba(255,255,255,0.3);"></i>
+          </div>
+        {% endif %}
+        <div class="card-body">
+          {% if article.category %}<span class="news-badge">{{ article.category.name }}</span>{% endif %}
+          <div class="card-meta"><i class="fa-regular fa-calendar"></i> {{ article.created_at|date:"d.m.Y" }}</div>
+          <h3 class="card-title">{{ article.title }}</h3>
+          <p class="card-text">{{ article.content|truncatewords:25 }}</p>
+          <a href="{% url 'news:detail' article.pk %}" class="card-link">{% trans "Batafsil o'qish" %}</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div style="text-align:center; padding:60px 0; color:var(--gray-500);">
+      <div style="font-size:3rem; margin-bottom:16px;"><i class="fa-solid fa-newspaper" style="color:var(--gray-300);"></i></div>
+      <p>{% trans "Hozircha yangiliklar yo'q." %}</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
+
+
+

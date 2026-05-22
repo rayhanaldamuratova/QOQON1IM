@@ -1,0 +1,141 @@
+﻿{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Ko'p so'raladigan savollar" %} | {% trans "Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi" %}{% endblock %}
+
+{% block content %}
+<div class="page-header">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="{% url 'core:home' %}">{% trans "Bosh sahifa" %}</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>FAQ</span>
+    </div>
+    <h1>{% trans "Ko'p so'raladigan savollar" %}</h1>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="faq-layout">
+
+      <!-- FAQ Accordion -->
+      <div class="faq-main">
+        {% if faqs %}
+          <div class="faq-list">
+            {% for faq in faqs %}
+            <div class="faq-item reveal" id="faq-{{ faq.pk }}">
+              <button class="faq-question" onclick="toggleFaq({{ faq.pk }})">
+                <span>{{ faq.question }}</span>
+                <i class="fa-solid fa-chevron-down faq-icon" id="icon-{{ faq.pk }}"></i>
+              </button>
+              <div class="faq-answer" id="answer-{{ faq.pk }}">
+                <div class="faq-answer-inner">{{ faq.answer|linebreaks }}</div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="faq-cta reveal">
+            <h3>{% trans "Qo'shimcha yordam kerakmi?" %}</h3>
+            <p>{% trans "Agar sizning savolingiz ro'yxatda bo'lmasa, biz bilan bog'laning:" %}</p>
+            <div class="faq-cta-buttons">
+              <a href="tel:+998731234567" class="btn btn-primary">
+                <i class="fa-solid fa-phone"></i> {% trans "Qo'ng'iroq qilish" %}
+              </a>
+              <a href="mailto:info@qoqon1maktab.uz" class="btn btn-outline">
+                <i class="fa-solid fa-envelope"></i> {% trans "Email yuborish" %}
+              </a>
+            </div>
+          </div>
+
+        {% else %}
+          <div class="empty-state">
+            <i class="fa-solid fa-circle-question"></i>
+            <p>{% trans "Hozircha savollar qo'shilmagan." %}</p>
+          </div>
+        {% endif %}
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="faq-sidebar reveal">
+        <div class="faq-contact-card">
+          <h3>{% trans "Aloqa" %}</h3>
+          <div class="faq-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <div>
+              <label>{% trans "Manzil" %}</label>
+              <p>O'zbekiston Respublikasi, Farg'ona viloyati, Qo'qon shahar, Nonvoylik guzar MFY, Yangi chorsu ko'chasi 227-uy</p>
+            </div>
+          </div>
+          <div class="faq-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <label>{% trans "Telefon" %}</label>
+              <p><a href="tel:+998916850075">+998 91 685-00-75</a></p>
+              <p><a href="tel:+998912001575">+998 91 200-15-75</a></p>
+            </div>
+          </div>
+          <div class="faq-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <label>Email</label>
+              <p><a href="mailto:qoqon1imi@umail.uz">qoqon1imi@umail.uz</a></p>
+            </div>
+          </div>
+          <div class="faq-contact-item">
+            <i class="fa-brands fa-telegram"></i>
+            <div>
+              <label>Telegram</label>
+              <p><a href="https://t.me/QOQON1IM" target="_blank">https://t.me/QOQON1IM</a></p>
+            </div>
+          </div>
+          <div class="faq-contact-item">
+            <i class="fa-brands fa-instagram"></i>
+            <div>
+              <label>Instagram</label>
+              <p><a href="https://instagram.com/qoqon_shahar_1_son_im" target="_blank">qoqon_shahar_1_son_im</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Yandex Map link -->
+        <div class="faq-map-card">
+          <i class="fa-solid fa-map-location-dot"></i>
+          <div>
+            <label>{% trans "Xaritada ko'rish" %}</label>
+            <a href="https://yandex.uz/maps/-/CPW9ZEJ4" target="_blank">Yandex Maps →</a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function toggleFaq(id) {
+  const answer = document.getElementById('answer-' + id);
+  const icon   = document.getElementById('icon-' + id);
+  const item   = document.getElementById('faq-' + id);
+  const isOpen = answer.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+  // Open clicked if was closed
+  if (!isOpen) {
+    answer.classList.add('open');
+    icon.style.transform = 'rotate(180deg)';
+    item.classList.add('active');
+  }
+}
+</script>
+{% endblock %}
+
+
+

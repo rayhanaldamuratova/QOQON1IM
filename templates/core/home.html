@@ -1,0 +1,174 @@
+﻿{% extends 'base.html' %}
+{% load i18n static %}
+
+{% block title %}Qo'qon shahri 1-sonli Ixtisoslashtirilgan Maktabi{% endblock %}
+{% block body_class %}home-page{% endblock %}
+{% block header_class %}header-transparent{% endblock %}
+
+{% block content %}
+
+<!-- HERO — fullscreen with bg image -->
+<section class="hero-fullscreen">
+  {% if school and school.hero_image %}
+    <img src="{{ school.hero_image.url }}" class="hero-bg-img" alt="Maktab">
+  {% endif %}
+  <div class="hero-overlay"></div>
+
+  <div class="hero-center">
+    <div class="hero-badge">
+      <i class="fa-solid fa-star"></i> {% trans "PIIMA tizimidagi maktab" %}
+    </div>
+    <h1 class="hero-title">
+      {% if school %}{{ school.name }}
+      {% else %}Qo'qon shahri 1-sonli<br><span class="hero-title-colored">Ixtisoslashtirilgan Maktabi</span>{% endif %}
+    </h1>
+    <p class="hero-desc">
+      {% if school and school.tagline %}{{ school.tagline }}
+      {% else %}O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi tizimida — chuqur bilim, kelajak sari.{% endif %}
+    </p>
+    <div class="hero-buttons">
+      <a href="{% url 'core:about' %}" class="btn btn-hero-primary">
+        {% trans "Batafsil" %} <i class="fa-solid fa-arrow-right"></i>
+      </a>
+      <a href="{% url 'gallery:list' %}" class="btn btn-hero-outline">
+        {% trans "Galereya" %}
+      </a>
+    </div>
+  </div>
+
+  <!-- Stats bar at bottom -->
+  <div class="hero-stats-bar">
+    <div class="hero-stat">
+      <i class="fa-solid fa-user-graduate"></i>
+      <div>
+        <div class="hero-stat-value" data-value="400" data-suffix="+">335</div>
+        <div class="hero-stat-label">{% trans "O'quvchilar" %}</div>
+      </div>
+    </div>
+    <div class="hero-stat-sep"></div>
+    <div class="hero-stat">
+      <i class="fa-solid fa-book-open"></i>
+      <div>
+        <div class="hero-stat-value" data-value="45" data-suffix="+">45+</div>
+        <div class="hero-stat-label">{% trans "O'qituvchilar" %}</div>
+      </div>
+    </div>
+    <div class="hero-stat-sep"></div>
+    <div class="hero-stat">
+      <i class="fa-solid fa-trophy"></i>
+      <div>
+        <div class="hero-stat-value" data-value="25" data-suffix="+">25+</div>
+        <div class="hero-stat-label">{% trans "Yutuqlar" %}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Social icons at very bottom center -->
+  <div class="hero-socials">
+    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://t.me/qoqon1im" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+    <a href="mailto:qoqon1imi@umail.uz" target="_blank"><i class="fa-brands fa-envelope"></i></a>
+<!--    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>-->
+
+  </div>
+</section>
+
+<!-- LATEST NEWS -->
+{% if latest_news %}
+<section class="section bg-off-white">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">{% trans "So'nggi yangiliklar" %}</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-3">
+      {% for article in latest_news %}
+      <article class="card reveal">
+        {% if article.image %}
+          <img src="{{ article.image.url }}" alt="{{ article.title }}" class="card-img">
+        {% else %}
+          <div style="height:200px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;">
+            <i class="fa-solid fa-newspaper" style="font-size:3rem;color:rgba(255,255,255,0.25);"></i>
+          </div>
+        {% endif %}
+        <div class="card-body">
+          {% if article.category %}<span class="news-badge">{{ article.category.name }}</span>{% endif %}
+          <div class="card-meta"><i class="fa-regular fa-calendar"></i> {{ article.created_at|date:"d.m.Y" }}</div>
+          <h3 class="card-title">{{ article.title }}</h3>
+          <p class="card-text">{{ article.content|truncatewords:20 }}</p>
+          <a href="{% url 'news:detail' article.pk %}" class="card-link">{% trans "Batafsil o'qish" %}</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="text-center reveal" style="margin-top:40px;">
+      <a href="{% url 'news:list' %}" class="btn btn-outline">{% trans "Barcha yangiliklar" %}</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ACHIEVEMENTS -->
+{% if top_achievements %}
+<section class="section">
+  <div class="container">
+    <div class="reveal">
+      <h2 class="section-title">{% trans "O'quvchi yutuqlari" %}</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="grid-2" style="gap:16px;">
+      {% for a in top_achievements %}
+      <div class="achievement-card reveal">
+        <div class="achievement-medal {% if a.place == 1 %}medal-gold{% elif a.place == 2 %}medal-silver{% elif a.place == 3 %}medal-bronze{% else %}medal-other{% endif %}">
+          {% if a.place %}{{ a.place }}{% else %}<i class="fa-solid fa-trophy"></i>{% endif %}
+        </div>
+        <div class="achievement-info">
+          <span class="achievement-level">{{ a.get_level_display }}</span>
+          <div class="achievement-title">{{ a.title }}</div>
+          <div class="achievement-student"><i class="fa-solid fa-user"></i> {{ a.student_name }}</div>
+          <div class="achievement-meta">{{ a.get_category_display }} · {{ a.date|date:"Y" }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center reveal" style="margin-top:32px;">
+      <a href="{% url 'achievements:list' %}" class="btn btn-outline">{% trans "Barcha yutuqlar" %}</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ABOUT SECTION -->
+<section class="section about-dark-section">
+  <div class="container">
+    <div class="about-split reveal">
+      <div class="about-split-text">
+        <h2 class="section-title" style="color:#fff;">{% trans "Maktab haqida" %}</h2>
+        <div class="section-divider"></div>
+        <p style="color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;">
+          {% if school and school.description %}{{ school.description|truncatewords:70 }}
+          {% else %}Qo'qon shahri 1-sonli ixtisoslashtirilgan maktabi O'zbekiston Respublikasi Ixtisoslashtirilgan ta'lim muassasalari agentligi (PIIMA) tizimida faoliyat yuritadi. Maktabimiz o'quvchilarga fan va texnologiya sohasida chuqur bilim berish maqsadida tashkil etilgan.{% endif %}
+        </p>
+        <a href="{% url 'core:about' %}" class="btn btn-outline-white">{% trans "Batafsil o'qish" %}</a>
+      </div>
+      <div class="about-split-cards">
+        {% for icon, label in about_features %}
+        <div class="about-feature-card">
+          <i class="fa-solid fa-{{ icon }}"></i>
+          <span>{{ label }}</span>
+        </div>
+        {% empty %}
+        <div class="about-feature-card"><i class="fa-solid fa-graduation-cap"></i><span>{% trans "Sifatli ta'lim" %}</span></div>
+        <div class="about-feature-card"><i class="fa-solid fa-trophy"></i><span>{% trans "Olimpiada g'oliblari" %}</span></div>
+        <div class="about-feature-card"><i class="fa-solid fa-flask"></i><span>{% trans "Zamonaviy laboratoriya" %}</span></div>
+        <div class="about-feature-card"><i class="fa-solid fa-globe"></i><span>{% trans "Xalqaro hamkorlik" %}</span></div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+
+
