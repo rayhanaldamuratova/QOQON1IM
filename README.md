@@ -1,4 +1,4 @@
-﻿# Buvayda Ixtisoslashtirilgan Maktabi — Rasmiy Veb-Sayt
+﻿# Qo'qon Ixtisoslashtirilgan Maktabi — Rasmiy Veb-Sayt
 
 Django + PostgreSQL + ko'p tilli (UZ/RU/EN) rasmiy maktab veb-sayti.
 
@@ -7,8 +7,8 @@ Django + PostgreSQL + ko'p tilli (UZ/RU/EN) rasmiy maktab veb-sayti.
 ## 📁 Loyiha tuzilmasi
 
 ```
-buvayda_school/
-├── buvayda_school/       # Asosiy Django konfiguratsiya
+kokand_school/
+├── kokand_school/       # Asosiy Django konfiguratsiya
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
@@ -56,7 +56,7 @@ Yoki `.env` fayl orqali sozlash (quyida ko'ring).
 
 `.env` fayl yarating:
 ```
-DB_NAME=buvayda_school_db
+DB_NAME=kokand_school_db
 DB_USER=postgres
 DB_PASSWORD=your_password
 DB_HOST=localhost
